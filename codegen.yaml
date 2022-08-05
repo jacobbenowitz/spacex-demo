@@ -1,0 +1,13 @@
+# Define schema origin
+schema:
+  - https://api.spacex.land/graphql/
+# Where to find client-side queries + plugins
+documents:
+  - ./src/**/*.graphql
+# Where to output services and establish list of plugins
+generates:
+  ./src/app/services/spacexGraphql.service.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
