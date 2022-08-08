@@ -13,10 +13,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <span>SpaceX Demo</span>
-        </header>
-
         <Switch>
           <Route exact path="/">
             <LaunchList />
