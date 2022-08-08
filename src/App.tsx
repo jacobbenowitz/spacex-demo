@@ -5,8 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import LaunchList from './components/launch-list/launch-list';
-import DetailView from './components/detail-view/detail-view';
+import LaunchList from './components/launch-list';
+import DetailView from './components/detail-view';
 import './App.css';
 
 function App() {

@@ -1,0 +1,16 @@
+#  Define the data we want to show in the LaunchDetails component
+#  $id ==> Establish arguement var to be used in query
+#  ID! ==> Make the ID parameter manditory
+#  launch(id) ==> SpaceX provided API query
+
+query launchDetails($id: ID!) {
+  launch(id: $id) {
+    id
+    mission_name
+    details
+    links {
+      flickr_images
+      mission_patch
+    }
+  }
+}

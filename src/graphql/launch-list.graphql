@@ -1,7 +1,6 @@
-"""
-  Define the data we want to show in the launch list component 
-  `launchesPast(limit`) ==> SpaceX GraphQL API query
-"""
+#  Define the data we want to show in the launch list component 
+#  `launchesPast(limit`) ==> SpaceX GraphQL API query
+
 query pastLaunchesList($limit: Int!) {
   launchesPast(limit: $limit) {
     id

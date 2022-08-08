@@ -1,12 +1,16 @@
 import React from "react";
 import { useQuery, gql } from '@apollo/client';
-// import launch-
+import { PastLaunchesListDocument, PastLaunchesListQuery } from "../graphql/generated";
 
 const LaunchList = () => {
 
+  const { loading, error, data } = useQuery(PastLaunchesListDocument)
+  
+  
+
   return (
     <div id="detail-view">
-
+      
     </div>
   )
 }
