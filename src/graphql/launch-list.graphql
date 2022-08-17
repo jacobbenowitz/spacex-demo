@@ -1,18 +1,52 @@
 #  Define the data we want to show in the launch list component 
 #  `launchesPast(limit`) ==> SpaceX GraphQL API query
 
+
 query pastLaunchesList($limit: Int!) {
   launchesPast(limit: $limit) {
     id
     mission_name
+    launch_date_local
     launch_date_utc
-    details
+    launch_year
+    launch_site {
+      site_name_long
+      site_name
+      site_id
+    }
     links {
+      article_link
+      video_link
       flickr_images
+      mission_patch
       mission_patch_small
+      reddit_launch
+      wikipedia
+      reddit_campaign
+      presskit
     }
     rocket {
-      rocket_name
+      second_stage {
+        payloads {
+          payload_type
+          orbit
+          reused
+        }
+      }
+      rocket {
+        wikipedia
+        stages
+        success_rate_pct
+        height {
+          feet
+        }
+        description
+        name
+        active
+      }
     }
+    mission_id
+    launch_success
+    details
   }
 }
