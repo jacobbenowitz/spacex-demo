@@ -17,7 +17,7 @@ const LaunchList = () => {
 
   const { data, loading, error } =
     useQuery<PastLaunchesListQuery, PastLaunchesListQueryVariables>(
-      PastLaunchesListDocument, { variables: { limit: 2 } }
+      PastLaunchesListDocument, { variables: { limit: 100 } }
     )
   
   console.log('data', data)
@@ -31,15 +31,21 @@ const LaunchList = () => {
               component="img"
               height="150"
               image={ launch?.links?.mission_patch_small ||
-                "https://via.placeholder.com/300x125.png?text=Mission+Patch" }
+                "https://via.placeholder.com/300x125.png?text=Mission+Patch"}
               alt={`${launch?.mission_name}-img`}
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+              <Typography variant="subtitle1" sx={{
+                textAlign: 'right',
+                mb: "1rem"
+              }}>
+                {new Date(launch?.launch_date_utc).toLocaleDateString()}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div" sx={{fontWeight: 600}}>
                 {launch?.mission_name}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {launch?.details}
+              <Typography variant="subtitle2" component="div">
+                Launch Site: {launch?.launch_site?.site_name_long}
               </Typography>
             </CardContent>
             <CardActions>
@@ -51,7 +57,7 @@ const LaunchList = () => {
   }
 
   return (
-    <Grid container spacing={2} id="detail-view">
+    <Grid container spacing={2} id="detail-view" alignItems={"start"}>
       {cards}
     </Grid>
   )

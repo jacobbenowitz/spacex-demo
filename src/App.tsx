@@ -12,13 +12,16 @@ import { Container, Box, Paper } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import darkTheme from './theme';
+import { HeroImage } from './components/hero-image';
 
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-        <Container maxWidth="lg" >
-        <Paper elevation={3} square sx={{mb: "1rem", px: "1rem"}} >
+      <Container maxWidth="lg" >
+        
+        <HeroImage />
+        {/* <Paper elevation={3} square sx={{mb: "1rem", px: "1rem"}} >
           <Box
             display="flex"
             justifyContent="start"
@@ -28,7 +31,7 @@ function App() {
             >
               <h3> SpaceX Launches</h3>
           </Box>
-        </Paper>
+        </Paper> */}
 
         <Box>
           <Router>

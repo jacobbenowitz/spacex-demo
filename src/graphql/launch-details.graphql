@@ -6,11 +6,54 @@
 query launchDetails($id: ID!) {
   launch(id: $id) {
     id
-    mission_name
-    details
     links {
-      flickr_images
+      article_link
+      mission_patch_small
       mission_patch
+      presskit
+      reddit_campaign
+      reddit_launch
+      reddit_media
+      reddit_recovery
+      video_link
+      wikipedia
+      flickr_images
+    }
+    launch_site {
+      site_id
+      site_name_long
+      site_name
+    }
+    launch_success
+    launch_year
+    launch_date_utc
+    mission_name
+    rocket {
+      rocket_type
+      rocket {
+        height {
+          feet
+        }
+        description
+        cost_per_launch
+        success_rate_pct
+        stages
+        name
+        company
+        country
+        diameter {
+          feet
+          meters
+        }
+        engines {
+          number
+          propellant_1
+          propellant_2
+          type
+          version
+        }
+      }
     }
   }
 }
+
