@@ -2,7 +2,6 @@ import Grid from '@mui/material/Grid';
 import { useQuery, gql } from '@apollo/client';
 import LaunchCard from "./launch-card";
 import {
-  LaunchesPastResult,
   PastLaunchesListDocument,
   PastLaunchesListQuery,
   PastLaunchesListQueryVariables
@@ -29,7 +28,14 @@ const LaunchList = () => {
   }
 
   return (
-    <Grid container spacing={2} id="detail-view" alignItems={"start"}>
+    // <Grid container spacing={2} id="detail-view" alignItems={"start"}>
+    <Grid container
+      spacing={{ xs: 2, md: 3 }}
+      columns={{ xs: 2, sm: 8, md: 12 }}
+      // direction="column"
+      // justifyContent="flex-start"
+      // alignItems="stretch"
+    >
       {cards}
     </Grid>
   )

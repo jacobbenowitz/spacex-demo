@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams
 } from "react-router-dom";
 import LaunchList from './components/launch-list';
 import DetailView from './components/detail-view';
@@ -15,11 +16,11 @@ import darkTheme from './theme';
 import { HeroImage } from './components/hero-image';
 
 function App() {
+
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Container maxWidth="lg" >
-        
+      <Container maxWidth="lg">
         <HeroImage />
         {/* <Paper elevation={3} square sx={{mb: "1rem", px: "1rem"}} >
           <Box
@@ -39,12 +40,14 @@ function App() {
               <Route exact path="/">
                 <LaunchList />
               </Route>
-              <Route exact path="/:id">
+              <Route
+                exact path="/details/:id">
                 <DetailView />
               </Route>
             </Switch>
           </Router>
         </Box>
+
       </Container>
     </ThemeProvider>
   );

@@ -23,7 +23,7 @@ export const HeroImage = ({title = heroTitle, image = heroBg}) => {
       </Box>
       <Box
         style={{
-          backgroundImage: 'url(https://live.staticflickr.com/65535/52201225758_b0e8627165_3k.jpg)',
+          backgroundImage: 'url(https://live.staticflickr.com/65535/52184724806_e00ed1b017_3k.jpg)',
           backgroundBlendMode: "multiply",
           backgroundSize: 'cover',
           backgroundRepeat: 'none',
